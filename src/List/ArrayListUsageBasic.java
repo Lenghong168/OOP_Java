@@ -1,28 +1,38 @@
 package List;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
-class LinkedListUasgeBasic {
+public class ArrayListUsageBasic {
     public static void main(String[] args) {
-        ArrayList<String> names = new ArrayList<>();
+        ArrayList<Integer> numbers = new ArrayList<>();
+        Scanner scanner = new Scanner(System.in);
 
-        names.add("Alice");
-        names.add("Bob");
-        names.add("Lita");
-        names.addFirst("Sinat");
+        System.out.println("Enter numbers (type '-1' to stop):");
 
-        System.out.println("First element: " + names.get(0));
-
-        names.set(1, "Devid");
-
-        names.remove(0);
-        names.remove("Bob");
-
-
-        for (String name : names) {
-            System.out.println(name);
+        // Input loop
+        while (true) {
+            int num = scanner.nextInt();
+            if (num == -1) {
+                break;
+            }
+            numbers.add(num);
         }
 
-        System.out.println("Size of Array: " +names.size());
+        // Find sum, max, min
+        int sum = 0;
+        int max = numbers.getFirst();
+        int min = numbers.getFirst();
+
+        for (int num : numbers) {
+            sum += num;
+            if (num > max) max = num;
+            if (num < min) min = num;
+        }
+
+        System.out.println("Numbers entered: " + numbers);
+        System.out.println("Sum = " + sum);
+        System.out.println("Largest = " + max);
+        System.out.println("Smallest = " + min);
     }
 }
