@@ -10,7 +10,6 @@ public class ArrayListUsageBasic {
 
         System.out.println("Enter numbers (type '-1' to stop):");
 
-        // Input loop
         while (true) {
             int num = scanner.nextInt();
             if (num == -1) {
@@ -19,7 +18,6 @@ public class ArrayListUsageBasic {
             numbers.add(num);
         }
 
-        // Find sum, max, min
         int sum = 0;
         int max = numbers.getFirst();
         int min = numbers.getFirst();
